@@ -1,34 +1,34 @@
 import java.util.Scanner;
 
 public class SemiPrime {
-	public static boolean check(int number) {
-		int loop = number / 2;
+  public static boolean check(int number) {
+     int loop = number / 2;
 
-		if ((number != 2) && (number % 2) == 0 && isPrime(loop)) {
-			return true;
-		}
-		for (int i = 3; i <= loop; i+=2) {
-			if (isPrime(i) && (number % i) == 0 && isPrime(number/i)) {
-				return true;
-			}
-		}
-		return false;
+     if ((number != 2) && (number % 2) == 0 && isPrime(loop)) {
+	return true;
+     }
+     for (int i = 3; i <= loop; i+=2) {
+	if (isPrime(i) && (number % i) == 0 && isPrime(number/i)) {
+	  return true;
 	}
+      }
+    return false;
+  }
 
-	private static boolean isPrime(int n) {
-		int loop = n / 2;
-		if (n % 2 == 0) {
-			return false;
-		}
-		for (int i = 3; i <= loop; i+=2) {
-			if(n % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+  private static boolean isPrime(int n) {
+    int loop = n / 2;
+    if (n % 2 == 0) {
+      return false;
+    }
+    for (int i = 3; i <= loop; i+=2) {
+      if(n % i == 0) {
+	return false;
+      }
+    }
+    return true;
+  }
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     SemiPrime semiPrime = new SemiPrime();
 
